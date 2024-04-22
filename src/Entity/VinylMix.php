@@ -24,11 +24,18 @@ class VinylMix
     private ?int $trackCount = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $string = null;
+    private ?string $genre = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
+    #[ORM\Column]
+    private ?int $votes = 0;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
     public function getId(): ?int
     {
         return $this->id;
@@ -70,14 +77,14 @@ class VinylMix
         return $this;
     }
 
-    public function getString(): ?string
+    public function getgenre(): ?string
     {
-        return $this->string;
+        return $this->genre;
     }
 
-    public function setString(string $string): static
+    public function setgenre(string $genre): static
     {
-        $this->string = $string;
+        $this->genre = $genre;
 
         return $this;
     }
@@ -90,6 +97,18 @@ class VinylMix
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getVotes(): ?int
+    {
+        return $this->votes;
+    }
+
+    public function setVotes(int $votes): static
+    {
+        $this->votes = $votes;
 
         return $this;
     }
