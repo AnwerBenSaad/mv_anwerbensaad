@@ -13,7 +13,7 @@ class VinylController extends AbstractController
 {
     public function __construct(
         private bool $isDebug,
-        private MixRepository $mixRepository
+        private VinylMixRepository $mixRepository
     ) {
     }
 
