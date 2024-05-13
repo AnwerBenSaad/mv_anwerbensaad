@@ -24,6 +24,8 @@ class VinylMix
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
+
+
     #[ORM\Column]
     private ?int $trackCount = null;
 
