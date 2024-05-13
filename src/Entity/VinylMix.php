@@ -32,10 +32,6 @@ class VinylMix
     #[ORM\Column]
     private int $votes = 0;
 
-    public function __construct()
-    {
-        $this->createdAt = new \DateTimeImmutable();
-    }
 
     public function getId(): ?int
     {
@@ -86,18 +82,6 @@ class VinylMix
     public function setGenre(string $genre): self
     {
         $this->genre = $genre;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
-    {
-        $this->createdAt = $createdAt;
 
         return $this;
     }
