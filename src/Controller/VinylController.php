@@ -33,6 +33,8 @@ class VinylController extends AbstractController
         ]);
     }
 
+
+
     #[Route('/browse/{slug}', name: 'app_browse')]
     public function browse(VinylMixRepository $mixRepository, string $slug = null): Response
     {
