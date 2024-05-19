@@ -17,3 +17,6 @@ services:
     App\Controller\VinylController:
         arguments:
             $isDebug: '%kernel.debug%'
+    # Explicitly make the EmailController public       
+    App\Controller\EmailController:
+        public: true
